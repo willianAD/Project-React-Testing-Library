@@ -26,8 +26,8 @@ describe('Testa se a pagina <FavoritesPokemons /> tem todos itens renderizado co
     const getFavorite = screen.getByRole('link', { name: 'Favorite Pokémons' });
     userEvent.click(getFavorite);
 
-    // const getText = screen.getByText('No favorite pokemon found');
-    // expect(getText).not.toBeInTheDocument();
+    const getText = screen.queryByText('No favorite pokemon found');
+    expect(getText).not.toBeInTheDocument();
 
     const getElement1 = screen.getByTestId('pokemon-name');
     expect(getElement1).toBeInTheDocument();
