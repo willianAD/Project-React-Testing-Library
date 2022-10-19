@@ -7,7 +7,7 @@ import renderWithRouter from './renderWithRouter';
 
 import App from '../App';
 
-describe('Testa ', () => {
+describe('Testa se o funcionamento da pagina é renderizado corretamente', () => {
   it('Verifica se os links tem seus respectivos titulos', () => {
     render(<MemoryRouter><App /></MemoryRouter>);
 
