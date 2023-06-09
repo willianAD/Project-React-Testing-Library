@@ -54,10 +54,15 @@ describe('Testa se a pagina <PokemonDetails /> tem todos itens renderizado corre
     const getDetails = screen.getByRole('link', { name: /More details/i });
     userEvent.click(getDetails);
 
+    const getCheckbox = screen.getByLabelText('Pokémon favoritado?');
+    console.log(getCheckbox.checked);
+    expect(getCheckbox.checked).toBeFalsy();
+
     const getChecked = screen.getByLabelText('Pokémon favoritado?');
     expect(getChecked).toBeInTheDocument();
 
     userEvent.click(getChecked);
+    expect(getCheckbox.checked).toBeTruthy();
 
     const getImgStar = screen.getByAltText('Pikachu is marked as favorite');
     const imageStar = 'http://localhost/star-icon.svg';

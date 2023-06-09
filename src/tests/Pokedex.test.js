@@ -40,7 +40,8 @@ describe('Testa a funcionalidade da pagina principal', () => {
     expect(getTypePokemon).toHaveTextContent('Electric');
 
     const buttonNext = screen.getByTestId('next-pokemon');
-    expect(buttonNext.disabled).toBeTruthy();
+    expect(buttonNext).toBeDisabled();
+    expect(buttonNext.disabled).toBe(true);
     userEvent.click(buttonAll);
 
     expect(getButton[1]).toHaveTextContent('Fire');
